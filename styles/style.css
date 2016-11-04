@@ -1,0 +1,57 @@
+*{
+	margin: 0;padding: 0;
+}
+body{
+	background-color: #000;
+}
+ul#coreBalls{
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	background-color: white;
+	margin: 220px auto;
+	-webkit-transform:rotate(45deg);
+}
+li{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: white;
+}
+#coreBalls>li{
+	position: absolute;
+	margin: 25px 0 0 250px;
+	-webkit-transform-origin: -200px 25px;
+}
+#coreBalls>li:before{
+	display: block;content: '';
+	position: absolute;
+	left: -250px;top: 22.5px;
+	width: 250px;height: 1px;
+	background-color: white;
+}
+#coreBalls>li:nth-child(1){
+	-webkit-transform:rotate(0deg);
+}
+#coreBalls>li:nth-child(2){
+	-webkit-transform:rotate(90deg);
+}
+#coreBalls>li:nth-child(3){
+	-webkit-transform:rotate(180deg);
+}
+#coreBalls>li:nth-child(4){
+	-webkit-transform:rotate(270deg);
+}
+#addBalls{
+	width: 50px;height: 50px;
+	margin: 10px auto;
+}
+#addBalls>li{
+	margin-bottom: 10px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 50px;
+	color: #000;
+	font-family: 微软雅黑,黑体;
+	font-size: 30px;
+}
