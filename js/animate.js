@@ -47,7 +47,8 @@ coreBalls.prototype={
 			//console.log(_this.getKnockedAngle(50,250));
 			var newAngle=90-angleNow;
 			if(newAngle<0) newAngle+=360;
-			var flag=Math.abs(angle-newAngle)<=(_this.getKnockedAngle(50,250));
+			var flag=Math.abs(angle-newAngle)<=(_this.getKnockedAngle(50,250))
+				||Math.abs(angle+360-newAngle)<=(_this.getKnockedAngle(50,250));
 			console.log(newAngle+'--'+angle+'--'+flag);
 			if(flag) return true;
 		}
@@ -65,9 +66,9 @@ coreBalls.prototype={
 		this.$('addBalls').addEventListener('click', function (event) {
 			//判断是否碰撞上
 			var flag=self.knocked(self);
+			//添加上去
+			self.addNewBall(event,self);
 			if(!flag){
-				//添加上去
-				self.addNewBall(event,self);
 				if(self.addBallsEle.getElementsByTagName('LI').length==0) alert('win!');
 			}else
 				self.gameOver();

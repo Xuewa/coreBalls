@@ -63,7 +63,7 @@ li{
 }
 #coreBalls{
 	-webkit-animation-name:rotate;
-	-webkit-animation-duration: 25s;
+	-webkit-animation-duration: 15s;
 	-webkit-animation-iteration-count: infinite;
 	-webkit-animation-timing-function:linear;
 }
