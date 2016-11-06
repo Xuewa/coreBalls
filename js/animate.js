@@ -57,9 +57,13 @@ coreBalls.prototype={
 	getKnockedAngle:function(ballRadius,lineLong){
 		return Math.ceil(2*Math.asin(ballRadius/2/lineLong)*180/Math.PI);
 	},
-	gameOver:function(){
+	gameOver:function(_this){
+		_this.coreBallsEle.className=' ';
+		document.getElementsByTagName('body')[0].className='lose';
 		alert('U lose!Game Over!');
-
+		setTimeout(function(){
+			window.location.reload();
+		},600);
 	},
 	bindUI:function(){
 		var self=this;
@@ -69,9 +73,17 @@ coreBalls.prototype={
 			//ÃÌº”…œ»•
 			self.addNewBall(event,self);
 			if(!flag){
-				if(self.addBallsEle.getElementsByTagName('LI').length==0) alert('win!');
+				if(self.addBallsEle.getElementsByTagName('LI').length==0) {
+					document.getElementsByTagName('body')[0].className='win';
+					self.coreBallsEle.className=' ';
+					alert('win!');
+					setTimeout(function(){
+						window.location.reload();
+					},600);
+
+				}
 			}else
-				self.gameOver();
+				self.gameOver(self);
 		},true);
 	},
 };

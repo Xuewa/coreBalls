@@ -4,6 +4,12 @@
 body{
 	background-color: #000;
 }
+body.lose{
+	background-color:darkmagenta ;
+}
+body.win{
+	background-color:green ;
+}
 ul{
 	list-style: none;
 }
@@ -61,9 +67,9 @@ li{
 	from {-webkit-transform:rotate(0deg);}
 	to {-webkit-transform:rotate(360deg);}
 }
-#coreBalls{
+#coreBalls.play{
 	-webkit-animation-name:rotate;
-	-webkit-animation-duration: 15s;
+	-webkit-animation-duration: 5s;
 	-webkit-animation-iteration-count: infinite;
 	-webkit-animation-timing-function:linear;
 }
